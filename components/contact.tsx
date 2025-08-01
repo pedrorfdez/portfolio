@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Mail, Phone, MapPin, Linkedin, Github, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Github } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Contact() {
@@ -14,10 +14,10 @@ export default function Contact() {
       <div className='container mx-auto px-4 max-w-6xl'>
         <div className='text-center mb-16'>
           <h2 className='text-4xl md:text-5xl font-bold text-white mb-6'>
-            Let's <span className='text-[#00a6fb]'>Connect</span>
+            Let&apos;s <span className='text-[#00a6fb]'>Connect</span>
           </h2>
           <p className='text-xl text-white/80 max-w-3xl mx-auto'>
-            I'm always interested in discussing new opportunities,
+            I&apos;m always interested in discussing new opportunities,
             collaborations, or just having a conversation about technology and
             data
           </p>

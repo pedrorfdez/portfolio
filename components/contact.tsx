@@ -1,11 +1,42 @@
+'use client';
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Mail, Phone, MapPin, Linkedin, Github } from 'lucide-react';
 import Link from 'next/link';
+import { useState } from 'react';
+import { submitContactForm } from '@/components/actions';
 
 export default function Contact() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<
+    'idle' | 'success' | 'error'
+  >('idle');
+
+  async function handleSubmit(formData: FormData) {
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const result = await submitContactForm(formData);
+      if (result.success) {
+        setSubmitStatus('success');
+        // Reset form
+        const form = document.querySelector('form') as HTMLFormElement;
+        form?.reset();
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+      console.error('Form submission error:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
+
   return (
     <section
       id='contact'
@@ -125,40 +156,67 @@ export default function Contact() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <form className='space-y-6'>
+              <form action={handleSubmit} className='space-y-6'>
                 <div className='grid md:grid-cols-2 gap-4'>
                   <div>
                     <Input
+                      name='name'
                       placeholder='Your Name'
+                      required
                       className='bg-white/10 border-white/20 text-white placeholder:text-white/50'
                     />
                   </div>
                   <div>
                     <Input
                       type='email'
+                      name='email'
                       placeholder='Your Email'
+                      required
                       className='bg-white/10 border-white/20 text-white placeholder:text-white/50'
                     />
                   </div>
                 </div>
 
                 <Input
+                  name='subject'
                   placeholder='Subject'
+                  required
                   className='bg-white/10 border-white/20 text-white placeholder:text-white/50'
                 />
 
                 <Textarea
+                  name='message'
                   placeholder='Your Message'
                   rows={6}
+                  required
                   className='bg-white/10 border-white/20 text-white placeholder:text-white/50'
                 />
+
+                {submitStatus === 'success' && (
+                  <div className='p-4 bg-green-500/20 border border-green-500/30 rounded-md'>
+                    <p className='text-green-300'>
+                      ✅ Message sent successfully! I&apos;ll get back to you
+                      soon.
+                    </p>
+                  </div>
+                )}
+
+                {submitStatus === 'error' && (
+                  <div className='p-4 bg-red-500/20 border border-red-500/30 rounded-md'>
+                    <p className='text-red-300'>
+                      ❌ Failed to send message. Please try again or email me
+                      directly.
+                    </p>
+                  </div>
+                )}
 
                 <Button
                   type='submit'
                   size='lg'
-                  className='w-full bg-[#00a6fb] hover:bg-[#0582ca] text-white'
+                  disabled={isSubmitting}
+                  className='w-full bg-[#00a6fb] hover:bg-[#0582ca] text-white disabled:opacity-50 disabled:cursor-not-allowed'
                 >
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </Button>
               </form>
             </CardContent>

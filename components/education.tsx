@@ -13,6 +13,15 @@ export default function Education() {
         'Developed expertise across the data lifecycle—including data engineering, scalable infrastructure, statistical analysis, and machine learning. Gained hands-on experience with building pipelines, deploying models, and managing cloud-based data systems.',
     },
     {
+      degree: 'Erasmus - B.Sc. in Informatics',
+      institution: 'Technische Universität München',
+      period: '2023 - 2024',
+      location: 'Munich, Germany',
+      status: 'Completed',
+      description:
+        'First conference paper: "Digital Twins for Advanced Driver Assistance Systems and Autonomous Vehicles"',
+    },
+    {
       degree: 'B.Sc. in Computer Engineering',
       institution: 'Universidad Politécnica de Madrid',
       period: '2020 - 2024',

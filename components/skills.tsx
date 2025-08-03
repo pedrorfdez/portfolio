@@ -20,11 +20,14 @@ export default function Skills() {
       title: 'Data Engineering',
       icon: Database,
       skills: [
-        'Apache Spark',
+        'Apache Spark & Spark Streaming',
         'ETL Pipelines',
         'Data Warehousing',
         'PostgreSQL',
         'Pandas',
+        'Apache Kafka',
+        'Apache Flume',
+        'HDFS',
       ],
     },
     {
@@ -35,7 +38,7 @@ export default function Skills() {
     {
       title: 'Data Science & ML',
       icon: BarChart,
-      skills: ['Machine Learning', 'Deep Learning'],
+      skills: ['Machine Learning', 'Deep Learning', 'PyTorch', 'Tensorboard'],
     },
   ];
 

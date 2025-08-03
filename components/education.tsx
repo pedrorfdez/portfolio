@@ -4,22 +4,22 @@ import { GraduationCap, Calendar, MapPin } from 'lucide-react';
 export default function Education() {
   const education = [
     {
-      degree: "Master's in Data Science",
+      degree: 'M.Sc. in Data Science',
       institution: 'Universidad Politécnica de Madrid',
       period: '2025 - 2026',
       location: 'Madrid, Spain',
       status: 'Ongoing',
       description:
-        'Advanced studies in machine learning, statistical analysis, and data science methodologies.',
+        'Developed expertise across the data lifecycle—including data engineering, scalable infrastructure, statistical analysis, and machine learning. Gained hands-on experience with building pipelines, deploying models, and managing cloud-based data systems.',
     },
     {
-      degree: 'Computer Engineering Degree',
+      degree: 'B.Sc. in Computer Engineering',
       institution: 'Universidad Politécnica de Madrid',
       period: '2020 - 2024',
       location: 'Madrid, Spain',
       status: 'Completed',
       description:
-        'Comprehensive program covering software engineering, computer systems, algorithms, and data structures.',
+        'Designs and builds efficient computer systems by combining software development with a deep understanding of hardware. Focused on creating reliable, high-performance technology solutions.',
     },
   ];
 
@@ -31,8 +31,7 @@ export default function Education() {
             <span className='text-[#00a6fb]'>Education</span> & Learning
           </h2>
           <p className='text-xl text-white/80 max-w-3xl mx-auto'>
-            Continuous learning and academic excellence at Universidad
-            Politécnica de Madrid
+            Continuous learning and academic excellence
           </p>
         </div>
 

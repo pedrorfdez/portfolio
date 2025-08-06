@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Mail, Phone, MapPin, Linkedin, Github, User } from 'lucide-react';
+import { MapPin, Linkedin, Github, User } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
 import { submitContactForm } from '@/components/actions';

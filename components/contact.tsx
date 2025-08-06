@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Mail, Phone, MapPin, Linkedin, Github } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Github, User } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
 import { submitContactForm } from '@/components/actions';
@@ -66,15 +66,15 @@ export default function Contact() {
               <CardContent className='space-y-6'>
                 <div className='flex items-center gap-4'>
                   <div className='w-12 h-12 bg-[#00a6fb]/20 rounded-full flex items-center justify-center'>
-                    <Mail className='text-[#00a6fb]' size={20} />
+                    <User className='text-[#00a6fb]' size={20} />
                   </div>
                   <div>
-                    <p className='text-white font-medium'>Email</p>
-                    <p className='text-white/70'>pfrascon24@gmail.com</p>
+                    <p className='text-white font-medium'>Name</p>
+                    <p className='text-white/70'>Pedro F. Rascon</p>
                   </div>
                 </div>
 
-                <div className='flex items-center gap-4'>
+                {/* <div className='flex items-center gap-4'>
                   <div className='w-12 h-12 bg-[#00a6fb]/20 rounded-full flex items-center justify-center'>
                     <Phone className='text-[#00a6fb]' size={20} />
                   </div>
@@ -82,7 +82,7 @@ export default function Contact() {
                     <p className='text-white font-medium'>Phone number</p>
                     <p className='text-white/70'>+34 651 45 94 93</p>
                   </div>
-                </div>
+                </div> */}
                 <div className='flex items-center gap-4'>
                   <div className='w-12 h-12 bg-[#00a6fb]/20 rounded-full flex items-center justify-center'>
                     <MapPin className='text-[#00a6fb]' size={20} />

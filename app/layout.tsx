@@ -31,11 +31,10 @@ export default function RootLayout({
       >
         {children}
         <Analytics />
-
         <Script
           src='https://analytics.ahrefs.com/analytics.js'
           data-key='m8giLyOrCMXcwI8osJZTDA'
-          async
+          strategy='afterInteractive'
         />
       </body>
     </html>
